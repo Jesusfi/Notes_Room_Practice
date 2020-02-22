@@ -12,15 +12,20 @@
         <action
             android:id="@+id/action_notesOverviewFragment_to_createNotesFragment"
             app:destination="@id/createNotesFragment"
-            app:popUpTo="@+id/notesOverviewFragment" />
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/nav_default_enter_anim" />
     </fragment>
     <fragment
         android:id="@+id/createNotesFragment"
         android:name="com.example.notes.createnotes.CreateNotesFragment"
         android:label="fragment_create_notes"
         tools:layout="@layout/fragment_create_notes" >
+        <argument
+            android:name="notesId"
+            app:argType="long" />
         <action
             android:id="@+id/action_createNotesFragment_to_notesOverviewFragment"
-            app:destination="@id/notesOverviewFragment" />
+            app:destination="@id/notesOverviewFragment"
+            app:popUpTo="@+id/createNotesFragment" />
     </fragment>
 </navigation>

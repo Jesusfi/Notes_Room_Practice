@@ -9,5 +9,7 @@ data class Note(
     @PrimaryKey(autoGenerate = true)
     var noteId: Long = 0L,
     @ColumnInfo(name = "note_message")
-    var noteMessage: String
+    var noteMessage: String,
+    @ColumnInfo(name = "date_created")
+    var initialDateNoteCreated: Long = System.currentTimeMillis()
 )
